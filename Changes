@@ -6,3 +6,6 @@ Revision history for Perl extension Lingua::SV::Num2Word.
 0.02	- changes for coding guideline compliance
 
 0.03	- changed split to use negative param in split uses, makes code cleaner
+
+0.04    - bug solved with numbers ending with 00, 000, etc.
+

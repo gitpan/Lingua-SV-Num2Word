@@ -37,7 +37,7 @@ sub num2sv_cardinal {
 
     $out = $tokens1[$num[0]].'hundra';
 
-    if ((int $num[1].$num[2]) < 20) {
+    if ((int $num[1].$num[2]) < 20 && (int $num[1].$num[2])>0 ) {
       $out .= &num2sv_cardinal(int $num[1].$num[2]);
     } else {
       $out .= $tokens2[$num[1]-2] if($num[1]);
@@ -49,14 +49,14 @@ sub num2sv_cardinal {
 
     $out  = &num2sv_cardinal(int join '',@num);
     $out .= 'tusen';
-    $out .= &num2sv_cardinal(int join '',@sub);
+    $out .= &num2sv_cardinal(int join '',@sub) if (int(join "",@sub) >0);
   } elsif($positive < 1_000_000_000) {                      # interval 1_000_000 - 999_999_999
     my @num = split '',$positive;
     my @sub = splice @num,-6;
 
     $out  = &num2sv_cardinal(int join '',@num);
     $out .= ' miljoner ';
-    $out .= &num2sv_cardinal(int join '',@sub);
+    $out .= &num2sv_cardinal(int join '',@sub) if (int(join "",@sub) >0);
   }
 
   return $out;
