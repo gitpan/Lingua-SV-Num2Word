@@ -11,7 +11,7 @@ use strict;
 BEGIN {
   use Exporter ();
   use vars qw($VERSION @ISA @EXPORT_OK);
-  $VERSION   = '0.03';
+  $VERSION   = '0.05';
   @ISA       = qw(Exporter);
   @EXPORT_OK = qw(&num2sv_cardinal);
 }
@@ -71,7 +71,7 @@ __END__
 
 =head1 NAME
 
-Lingua::SV::Num2Word - positive number to text convertor for svedish. Output
+Lingua::SV::Num2Word - positive number to text convertor for swedish. Output
 text is in iso-8859-1 encoding.
 
 =head1 SYNOPSIS
@@ -80,12 +80,12 @@ text is in iso-8859-1 encoding.
 
  my $text = Lingua::SV::Num2Word::num2sv_cardinal( 123 );
 
- print $text || "sorry, can't convert this number into svedish language.";
+ print $text || "sorry, can't convert this number into swedish language.";
 
 =head1 DESCRIPTION
 
 Lingua::SV::Num2Word is module for converting numbers into their representation
-in svedish. Converts whole numbers from 0 up to 999 999 999.
+in swedish. Converts whole numbers from 0 up to 999 999 999.
 
 =head2 Functions
 
