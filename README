@@ -1,7 +1,7 @@
-Lingua/SV/Num2Word version 0.01
+Lingua/SV/Num2Word version 0.03
 ===============================
 
-Lingua::SV::Num2Word is number to text convertor for swedish. Output
+Lingua::SV::Num2Word is number to text convertor for svedish. Output
 text is in iso-8859-1 encoding.
 
 Converts whole numbers from 0 up to 999 999 999.

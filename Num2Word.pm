@@ -11,7 +11,7 @@ use strict;
 BEGIN {
   use Exporter ();
   use vars qw($VERSION @ISA @EXPORT_OK);
-  $VERSION   = '0.02';
+  $VERSION   = '0.03';
   @ISA       = qw(Exporter);
   @EXPORT_OK = qw(&num2sv_cardinal);
 }
@@ -45,14 +45,14 @@ sub num2sv_cardinal {
     }
   } elsif($positive < 1000_000) {                           # interval 1000 - 999_999
     my @num = split '',$positive;
-    my @sub = splice @num,scalar(@num)-3,3;
+    my @sub = splice @num,-3;
 
     $out  = &num2sv_cardinal(int join '',@num);
     $out .= 'tusen';
     $out .= &num2sv_cardinal(int join '',@sub);
   } elsif($positive < 1_000_000_000) {                      # interval 1_000_000 - 999_999_999
     my @num = split '',$positive;
-    my @sub = splice @num,scalar(@num)-6,6;
+    my @sub = splice @num,-6;
 
     $out  = &num2sv_cardinal(int join '',@num);
     $out .= ' miljoner ';
@@ -107,7 +107,7 @@ None.
 
 =head1 AUTHOR
 
-Vitor Serra Mori E<lt>info@petamem.com.E<gt>,
+Vitor Serra Mori E<lt>info@petamem.com.E<gt>
 
 =head1 COPYRIGHT
 
